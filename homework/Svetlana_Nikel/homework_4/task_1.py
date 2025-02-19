@@ -23,4 +23,3 @@ my_dict['set'].add(10.15)  # set - добавьте новый элемент в
 my_dict['set'].discard(2.0)  # set - удалите элемент из множества
 
 print(my_dict)
-
