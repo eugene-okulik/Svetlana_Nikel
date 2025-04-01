@@ -4,6 +4,7 @@ def fibonacci_generator():
         yield a
         a, b = b, a + b
 
+
 count = 0
 for number in fibonacci_generator():
     if count == 4:

@@ -1,5 +1,6 @@
 import random
 
+
 def calc():
     salary = int(input("Какая у вас заработная плата?"))
     bonus = random.choice([True, False])
@@ -9,5 +10,6 @@ def calc():
     else:
         total_salary = salary
     print(f'{salary}, {bonus} - ${total_salary}')
+
 
 calc()
