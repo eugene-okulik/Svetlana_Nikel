@@ -6,8 +6,10 @@ def repeat_me(count=1):
         return wrapper
     return decorator
 
+
 @repeat_me(count=2)
 def example(text):
     print(text)
+
 
 example('print me')
