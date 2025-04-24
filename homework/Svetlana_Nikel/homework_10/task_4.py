@@ -5,6 +5,6 @@ PRICE_LIST = '''тетрадь 50р
 альбом 120р
 пенал 300р
 рюкзак 500р'''
-price_dict = {key : int(value[: -1])
+price_dict = {key: int(value[: -1])
               for key, value in (line.split() for line in PRICE_LIST.split('\n'))}
 print(price_dict)
