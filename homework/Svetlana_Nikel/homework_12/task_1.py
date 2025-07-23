@@ -69,4 +69,3 @@ if white_flowers:
     print("Белый цветок в букете -", white_flowers[0].name)
 else:
     print("В букете нет белых цветов")
-
