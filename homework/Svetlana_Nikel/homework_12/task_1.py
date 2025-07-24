@@ -84,7 +84,8 @@ else:
     print("В букете нет белых цветов")
 
 new_buket.sort(sort_key='price')
-print("Сортировка по цене:", ", ".join(f"{flower.name} цвет {flower.color} : {flower.price} рублей" for flower in new_buket.flowers))
+print("Сортировка по цене:", ", ".join(f"{flower.name} цвет {flower.color} : "
+                                       f"{flower.price} рублей" for flower in new_buket.flowers))
 
 new_buket.sort(sort_key='color')
 print("Сортировка по цвету:", ", ".join(f"{flower.name} {flower.color} цвет" for flower in new_buket.flowers))
