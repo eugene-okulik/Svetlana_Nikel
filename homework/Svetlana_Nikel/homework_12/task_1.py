@@ -51,7 +51,7 @@ class Buket:
                 found_flowers.append(flower)
         return found_flowers
 
-    def sort(self, sort_key = 'name'):
+    def sort(self, sort_key='name'):
         if sort_key == 'color':
             self.flowers.sort(key=lambda flower: flower.color)
         elif sort_key == 'price':
@@ -60,7 +60,6 @@ class Buket:
             self.flowers.sort(key=lambda flower: flower.lifespan)
         else:
             self.flowers.sort(key=lambda flower: flower.name)
-
 
 
 flower1 = Giacint('желтый', 700)
