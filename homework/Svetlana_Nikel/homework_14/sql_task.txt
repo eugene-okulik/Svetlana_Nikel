@@ -1,0 +1,39 @@
+INSERT INTO students (name, second_name) VALUES ('Anna', 'Zinina')
+
+INSERT INTO books (title, taken_by_student_id)
+VALUES
+('Algebra', 21110),
+('Biology', 21110),
+('Geography', 21110)
+
+INSERT INTO `groups` (title, start_date, end_date)
+VALUES ('Faculty of Economics', 'sept 2025', 'may 2029')
+
+UPDATE students SET group_id = 5625 WHERE id = 21110
+
+INSERT INTO subjects (title) VALUES ('Алгебра'), ('Биология'), ('География')
+
+INSERT INTO lessons (title, subject_id)
+VALUES
+('lesson_alg_1', 11894), ('lesson_alg_2', 11894),
+('lesson_bio_1', 11895), ('lesson_bio_2', 11895),
+('lesson_geo_1', 11896), ('lesson_geo_2', 11896)
+
+INSERT INTO marks (value, lesson_id, student_id)
+VALUES
+(5, 12084, 21110), (5, 12085, 21110),
+(4, 12086, 21110), (4, 12087, 21110),
+(3, 12088, 21110), (3, 12089, 21110)
+
+SELECT * FROM marks WHERE student_id = 21110
+
+SELECT * FROM books WHERE taken_by_student_id  = 21110
+
+SELECT s.id, s.name, s.second_name , g.title, b.title, sb.title, l.title, m.value
+FROM students s
+LEFT JOIN books b ON s.id = b.taken_by_student_id
+LEFT JOIN `groups` g ON s.group_id = g.id
+LEFT JOIN marks m ON s.id = m.student_id
+LEFT JOIN lessons l ON m.lesson_id = l.id
+LEFT JOIN subjects sb ON  l.subject_id = sb.id
+WHERE s.id = 21110
