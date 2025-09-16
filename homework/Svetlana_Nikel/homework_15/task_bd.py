@@ -9,7 +9,7 @@ db = mysql.connect(
     use_pure=True
 )
 
-cursor = db.cursor(dictionary = True)
+cursor = db.cursor(dictionary=True)
 # Добавляем студента
 cursor.execute("INSERT INTO students (name, second_name) VALUES (%s, %s)", ("Svetlana", "Ivanova"))
 student_id = cursor.lastrowid
@@ -54,7 +54,7 @@ lessons = [
     ("lesson_alg_2", subject_ids["Алгебра"]),
     ("lesson_bio_1", subject_ids["Биология"]),
     ("lesson_bio_2", subject_ids["Биология"]),
-    ]
+]
 lesson_ids = []
 for title, subj_id in lessons:
     cursor.execute("INSERT INTO lessons (title, subject_id) VALUES (%s, %s)", (title, subj_id))
