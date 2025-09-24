@@ -20,13 +20,13 @@ with open(csv_path, newline='', encoding='utf-8') as csvfile:
     csv_data = list(csv.DictReader(csvfile))
 
 select_query = '''
-SELECT 
-    s.name AS name, 
-    s.second_name AS second_name, 
-    g.title AS group_title, 
-    b.title AS book_title, 
-    sb.title AS subject_title, 
-    l.title AS lesson_title, 
+SELECT
+    s.name AS name,
+    s.second_name AS second_name,
+    g.title AS group_title,
+    b.title AS book_title,
+    sb.title AS subject_title,
+    l.title AS lesson_title,
     m.value AS mark_value
 FROM students s
 JOIN books b ON s.id = b.taken_by_student_id
