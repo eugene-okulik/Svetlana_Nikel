@@ -14,7 +14,9 @@ db = mysql.connect(
     use_pure=True
 )
 
-csv_path = "C:/Users/mzsve/projects/Svetlana_Nikel/homework/eugene_okulik/Lesson_16/hw_data/data.csv"
+base_path = os.path.dirname(__file__)
+homework_path = os.path.dirname(os.path.dirname(base_path))
+csv_path = os.path.join(homework_path, 'eugene_okulik', 'Lesson_16', 'hw_data', 'data.csv')
 
 with open(csv_path, newline='', encoding='utf-8') as csvfile:
     csv_data = list(csv.DictReader(csvfile))
