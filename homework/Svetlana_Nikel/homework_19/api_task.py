@@ -24,7 +24,8 @@ def put_object():
         "name": "new_name"
     }
     headers = {'Content-Type': 'application/json'}
-    response = requests.put(f'https://objapi.course.qa-practice.com/object/{object_id}', json=body, headers=headers).json()
+    response = requests.put(f'https://objapi.course.qa-practice.com/object/{object_id}',
+                            json=body, headers=headers).json()
     assert response["data"] == {"color": "white", "size": "short"}, "Data incorrect"
     assert response["name"] == "new_name", "Name incorrect"
     clear(object_id)
@@ -36,7 +37,8 @@ def patch_object():
         "data": {"color": "white", "size": "short"}
     }
     headers = {'Content-Type': 'application/json'}
-    response = requests.patch(f'https://objapi.course.qa-practice.com/object/{object_id}', json=body, headers=headers).json()
+    response = requests.patch(f'https://objapi.course.qa-practice.com/object/{object_id}',
+                              json=body, headers=headers).json()
     assert response["data"] == {"color": "white", "size": "short"}, "Data incorrect"
     clear(object_id)
 
