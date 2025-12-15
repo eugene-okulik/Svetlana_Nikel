@@ -34,9 +34,9 @@ def new_object():
 @pytest.mark.parametrize(
     "data, name",
     [
-    ({"color": "black", "size": "full"}, "Broker"),
-    ({"color": "white", "size": "short"}, "Bread"),
-    ({"color": "grey", "size": "part"}, "Water")
+        ({"color": "black", "size": "full"}, "Broker"),
+        ({"color": "white", "size": "short"}, "Bread"),
+        ({"color": "grey", "size": "part"}, "Water")
     ]
 )
 def test_create_object(data, name):
@@ -58,7 +58,7 @@ def test_put_object(new_object):
         "data": {"color": "white", "size": "short"},
         "name": "new_name"
     }
-    response = requests.put(f"{work_url}/{new_object}",json=body, timeout=10)
+    response = requests.put(f"{work_url}/{new_object}", json=body, timeout=10)
     assert response.status_code == 200
     assert response.json()["name"] == "new_name"
     assert response.json()["data"] == body["data"]
