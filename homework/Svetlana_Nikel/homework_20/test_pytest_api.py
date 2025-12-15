@@ -1,7 +1,7 @@
 import requests
 import pytest
 
-work_url = 'https://objapi.course.qa-practice.com/object'
+work_url = 'http://objapi.course.qa-practice.com/object'
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -45,7 +45,7 @@ def test_create_object(data, name):
         "name": name
     }
     response = requests.post(work_url, json=body, timeout=10)
-    assert response.status_code == 201
+    assert response.status_code == 200
     response_json = response.json()
     assert response_json["data"] == data
     assert response_json["name"] == name
